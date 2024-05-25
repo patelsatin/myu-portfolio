@@ -1,0 +1,27 @@
+<section
+  class="section about-section dark-bg"
+  id="skills"
+  style="background-color: cadetblue"
+>
+  <p-treeTable
+    [value]="data"
+    [scrollable]="true"
+    [tableStyle]="{ width: '1100px' }"
+  >
+    <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
+      <tr [ttRow]="rowNode">
+        <td>
+          <p-treeTableToggler [rowNode]="rowNode"></p-treeTableToggler>
+          {{ rowData.name }}
+        </td>
+        <td>
+          <p-rating
+            [(ngModel)]="rowData.size"
+            [readonly]="true"
+            [cancel]="false"
+          ></p-rating>
+        </td>
+      </tr>
+    </ng-template>
+  </p-treeTable>
+</section>
